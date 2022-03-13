@@ -1,0 +1,4 @@
+<ifModule mod_headers.c> 
+    # While site is still being developed, don't cache in Cloudflare
+    Header set Cache-Control "private, max-age=3600"
+</ifModule>

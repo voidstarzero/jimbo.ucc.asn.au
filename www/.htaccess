@@ -1,4 +1,5 @@
 DirectoryIndex home.html index.html
+ServerSignature Off
 
 # Add custom error pages here
 ErrorDocument 404 /errors/not_found.html

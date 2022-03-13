@@ -1,4 +1,11 @@
+# Add custom error pages here
 ErrorDocument 404 /errors/not_found.html
+
+# Don't use bare directories, redirect to actual pages
+<ifModule mod_dir.c>
+    DirectoryIndex home.html index.html
+    DirectoryIndexRedirect permanent
+</ifModule>
 
 # While site is still being developed, don't cache in Cloudflare
 <ifModule mod_headers.c> 

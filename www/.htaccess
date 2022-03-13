@@ -3,7 +3,7 @@ DirectoryIndex home.html index.html
 # Add custom error pages here
 ErrorDocument 404 /errors/not_found.html
 
-# While site is still being developed, don't cache in Cloudflare
-<ifModule mod_headers.c> 
-    Header set Cache-Control "private, max-age=3600"
-</ifModule>
+## While site is still being developed, don't cache in Cloudflare
+#<ifModule mod_headers.c> 
+#    Header set Cache-Control "private, max-age=3600"
+#</ifModule>

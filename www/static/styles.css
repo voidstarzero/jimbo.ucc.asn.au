@@ -59,7 +59,8 @@ main aside {
     font-weight: bold;
 }
 
-main article {
+main article,
+main section[aria-label] {
     border-bottom: 1px var(--clr-border) solid;
 }
 

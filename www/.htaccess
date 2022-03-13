@@ -1,4 +1,6 @@
+ErrorDocument 404 /errors/not_found.html
+
+# While site is still being developed, don't cache in Cloudflare
 <ifModule mod_headers.c> 
-    # While site is still being developed, don't cache in Cloudflare
     Header set Cache-Control "private, max-age=3600"
 </ifModule>

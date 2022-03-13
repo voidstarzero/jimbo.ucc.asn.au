@@ -23,6 +23,7 @@ body {
     background-color: var(--clr-bg);
     color: var(--clr-text);
     font-family: var(--font-primary);
+    line-height: 1.25;
 }
 
 header.content-column {

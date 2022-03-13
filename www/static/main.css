@@ -1,8 +1,9 @@
 /* Global layout */
 
 :root {
+    --clr-bg: white;
     --clr-bg-cap: #e1e8e2;
-    --clr-bg-accent: white;
+    --clr-bg-accent: wheat;
     --clr-text: #1a1a1d;
 }
 
@@ -23,6 +24,7 @@ body {
     grid-template-rows: auto 1fr auto;
     color: var(--clr-text);
     font-family: sans-serif;
+    background-color: var(--clr-bg);
 }
 
 .content-column {
@@ -53,6 +55,10 @@ nav a {
     border-radius: 0.5rem;
     display: inline-block;
     padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    background-color: lightblue;
 }
 
 h1, h2, h3, h4 {

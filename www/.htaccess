@@ -4,7 +4,17 @@ ServerSignature Off
 # Add custom error pages here
 ErrorDocument 404 /errors/not_found.html
 
-## While site is still being developed, don't cache in Cloudflare
-#<ifModule mod_headers.c> 
-#    Header set Cache-Control "private, max-age=3600"
-#</ifModule>
+<ifModule mod_headers.c>
+    # Security headers
+    Header set Content-Security-Policy "default-src 'self';"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    # Ensure we don't set STS when not being served through my own domain
+    <If "%{HTTP_HOST} =~ /^jimbo\./">
+        Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    </If>
+
+    ## While site is still being developed, don't cache in Cloudflare
+    #Header set Cache-Control "private, max-age=3600"
+</ifModule>

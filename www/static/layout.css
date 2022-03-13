@@ -1,12 +1,4 @@
-/* Global layout */
-
-:root {
-    --clr-bg: white;
-    --clr-bg-cap: #e1e8e2;
-    --clr-bg-accent: #4088b8;
-    --clr-text: #1a1a1d;
-    --clr-text-accent: #efefef;
-}
+/* Global (mobile first) */
 
 *,
 *::before,
@@ -23,20 +15,12 @@ body {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
-    color: var(--clr-text);
-    font-family: sans-serif;
-    background-color: var(--clr-bg);
 }
 
 .content-column {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
-}
-
-header.content-column {
-    border-bottom: 4px #888 solid;
-    background-color: var(--clr-bg-cap);
 }
 
 nav ul {
@@ -49,29 +33,32 @@ nav ul {
 }
 
 nav a {
-    color: var(--clr-text-accent);
-    text-decoration: none;
-    border: 1px black solid;
-    background-color: var(--clr-bg-accent);
-    border-radius: 0.5rem;
     display: inline-block;
     padding: 0.5rem 1rem;
 }
 
-nav a:hover {
-    background-color: #a0c4dc;
-}
-
 h1, h2, h3, h4 {
-    font-family: monospace;
     margin: 1em 0;
 }
+
+main.content-column {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+main aside {
+    padding: 0 1rem;
+}
+
+/* Responsive (mobile only) */
 
 @media (max-width: 599px) {
     .mobile-hide {
         display: none;
     }
 }
+
+/* Responsive (landscape screens) */
 
 @media (min-width: 600px) {
     nav ul {
@@ -86,7 +73,7 @@ h1, h2, h3, h4 {
     nav a {
         width: 100%;
     }
-    
+
     h1 {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -97,6 +84,8 @@ h1, h2, h3, h4 {
         padding-right: 2rem;
     }
 }
+
+/* Responsive (desktop/wide screens) */
 
 @media (min-width: 900px) {
     .content-column {
@@ -119,35 +108,4 @@ h1, h2, h3, h4 {
         padding-left: 4rem;
         padding-right: 4rem;
     }
-}
-
-/* Body content */
-
-main.content-column {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
-main aside {
-    background-color: #db8b5d;
-    padding: 0 1rem;
-    border: 1px #b1704a solid;
-    border-radius: 1rem;
-}
-
-.tagline {
-    font-style: italic;
-    font-weight: bold;
-}
-
-main article {
-    border-bottom: 1px #444 solid;
-}
-
-footer.content-column {
-    border-top: 1px #888 solid;
-    background-color: var(--clr-bg-cap);
-    color: #444;
-    font-style: italic;
-    font-size: 0.9em;
 }

@@ -15,14 +15,14 @@
     --clr-text-btn: #efefef;
     --clr-text-cap:  #444444;
 
-    --font-primary: sans-serif;
-    --font-heading: monospace;
+    --ff-primary: sans-serif;
+    --ff-heading: monospace;
 }
 
 body {
     background-color: var(--clr-bg);
     color: var(--clr-text);
-    font-family: var(--font-primary);
+    font-family: var(--ff-primary);
     line-height: 1.25;
 }
 
@@ -50,7 +50,7 @@ nav a:hover {
 }
 
 h1, h2, h3, h4 {
-    font-family: var(--font-heading);
+    font-family: var(--ff-heading);
 }
 
 main aside {

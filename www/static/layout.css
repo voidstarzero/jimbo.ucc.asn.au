@@ -6,7 +6,7 @@
     box-sizing: inherit;
 }
 
-html {
+:root {
     box-sizing: border-box;
 }
 
@@ -17,7 +17,7 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-.content-column {
+body > * {
     padding-left: 1rem;
     padding-right: 1rem;
     width: 100%;
@@ -41,7 +41,7 @@ h1, h2, h3, h4 {
     margin: 1em 0;
 }
 
-main.content-column {
+body > main {
     padding-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -79,7 +79,7 @@ main aside {
         padding-right: 1rem;
     }
 
-    main.content-column {
+    body > main {
         padding-left: 2rem;
         padding-right: 2rem;
     }
@@ -88,7 +88,7 @@ main aside {
 /* Responsive (desktop/wide screens) */
 
 @media (min-width: 900px) {
-    .content-column {
+    body > * {
         padding-left: 2rem;
         padding-right: 2rem;
     }
@@ -102,7 +102,7 @@ main aside {
         padding-right: 2rem;
     }
 
-    main.content-column {
+    body > main {
         max-width: 60rem;
         margin: 0 auto;
         padding-left: 4rem;

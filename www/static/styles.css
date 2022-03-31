@@ -31,6 +31,12 @@ body > header {
     border-bottom: 4px var(--clr-border-cap) solid;
 }
 
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
 nav a {
     background-color: var(--clr-bg-btn);
     border: 1px var(--clr-border-btn) solid;

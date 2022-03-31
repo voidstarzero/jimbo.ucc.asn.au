@@ -93,8 +93,10 @@ main aside {
         padding-right: 2rem;
     }
 
-    nav ul {
-        gap: 1rem;
+    body > header > * {
+        max-width: 76rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     h1 {

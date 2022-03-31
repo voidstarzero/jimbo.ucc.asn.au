@@ -22,6 +22,12 @@ body > * {
     padding: 0 clamp(0.5rem, 3vw, 2rem);
 }
 
+body > header > * {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 nav ul {
     width: 100%;
     margin: 1rem 0;

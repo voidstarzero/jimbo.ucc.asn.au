@@ -49,8 +49,20 @@ nav a:hover {
     background-color: var(--clr-bg-btn-fade);
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3 {
     font-family: var(--ff-heading);
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.125rem;
 }
 
 main aside {

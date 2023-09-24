@@ -1,4 +1,4 @@
-DirectoryIndex home.html index.html
+DirectoryIndex index.html
 ServerSignature Off
 
 # Add custom error pages here

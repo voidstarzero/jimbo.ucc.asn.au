@@ -1,5 +1,5 @@
-james.arcus.id.au
-=================
+jimbo.ucc.asn.au
+================
 Code for my personal website.
 
 You can see it in action over at [jimbo.ucc.asn.au][jimbo-ucc].

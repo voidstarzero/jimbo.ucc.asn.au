@@ -89,3 +89,10 @@ body > footer {
     color: var(--clr-text-cap);
     font-style: italic;
 }
+
+blockquote {
+    box-shadow: -1em 0 0 0 var(--clr-border-cap);
+    border-left: 1em var(--clr-bg) solid;
+    margin-left: 1em;
+    margin-right: 0;
+}

@@ -6,15 +6,37 @@ ErrorDocument 404 /errors/not_found.html
 
 <ifModule mod_headers.c>
     # Security headers
-    Header set Content-Security-Policy "default-src 'self';"
+    Header set Content-Security-Policy "default-src 'self'; object-src 'none'"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
-    # Ensure we don't set STS when not being served through my own domain
     <If "%{HTTP_HOST} =~ /^jimbo\./">
+        # Ensure we don't include this when served via the /~jimbo method
         Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
     </If>
 
     ## While site is still being developed, don't cache in Cloudflare
     #Header set Cache-Control "private, max-age=3600"
 </ifModule>
+
+Options +Includes
+XBitHack On
+
+RewriteEngine On
+
+# Use the proxy feature of mod_rewrite to pass anything in the /proxy dir to motsugo
+RewriteRule "/proxy/(.*)$" "http://motsugo.ucc.asn.au:8021/$2" [P]
+
+# If the URL doesn't end in a component with a file extension, transparently
+# add the .html extension. Regex breakdown:
+#   ! -- it doesn't match
+#   [^.]+ -- at least one non-dot character (so we don't catch "dotfiles")
+#   \. -- then a literal dot
+#   [^/]* -- then any number of non-slash characters
+#       (we only care about the last component, the "filename")
+#   $ -- occuring at the end of the URL
+RewriteCond "%{REQUEST_URI}" "![^.]+\.[^/]*$"
+# But only if the file it would have matched doesn't exist
+RewriteCond "%{REQUEST_FILENAME}" !-f
+RewriteCond "%{REQUEST_FILENAME}" !-d
+RewriteRule "^(.*)$" "$1.html"

@@ -60,10 +60,22 @@ main aside {
     padding: 0 1rem;
 }
 
-/* Responsive (mobile only) */
+.push-clear {
+    clear: both;
+}
 
-@media (max-width: 600px) {
+.push-right {
+    float: right;
+}
+
+.mobile-hide {
+    display: none;
+}
+
+/* Responsive (desktop only) */
+
+@media (min-width: 800px) {
     .mobile-hide {
-        display: none;
+        display: initial;
     }
 }

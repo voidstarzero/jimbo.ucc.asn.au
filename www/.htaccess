@@ -6,7 +6,7 @@ ErrorDocument 404 /errors/not_found.html
 
 <ifModule mod_headers.c>
     # Security headers
-    Header set Content-Security-Policy "default-src 'self'; object-src 'none'"
+    Header set Content-Security-Policy "default-src 'self'"
     Header set Referrer-Policy "strict-origin-when-cross-origin"
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"

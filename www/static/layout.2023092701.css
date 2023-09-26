@@ -68,6 +68,11 @@ main aside {
     float: right;
 }
 
+.fulldoc {
+    width: 100%;
+    height: 100%;
+}
+
 .mobile-hide {
     display: none;
 }
